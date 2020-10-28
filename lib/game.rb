@@ -4,4 +4,12 @@ class Game
     @server = server
     @receiver = receiver
   end
+
+  def point_to(player)
+
+  end
+
+  def score
+    "1, 0"
+  end
 end
