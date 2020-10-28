@@ -18,5 +18,11 @@ describe Game do
       @game.point_to(@server)
       expect(@game.score).to eq '1, 0' 
     end
+
+    it 'can assign 2 points to the server, and return the score' do
+      @game.point_to(@server)
+      @game.point_to(@server)
+      expect(@game.score).to eq '2, 0' 
+    end
   end
 end
