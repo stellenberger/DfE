@@ -7,7 +7,19 @@ class Game
   end
 
   def point_to(player)
-    @points_array[0] += 1
+    if player == @server 
+      point_to_server
+    else
+      point_to_receiver
+    end
+  end
+
+  def point_to_server
+    @points_array[0] += 1  
+  end
+
+  def point_to_receiver
+    @points_array[1] += 1  
   end
 
   def score
