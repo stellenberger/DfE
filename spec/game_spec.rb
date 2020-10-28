@@ -43,4 +43,14 @@ describe Game do
       expect(@game.score).to eq 'fifteen, thirty'
     end
   end
+
+  context '#deuce score' do
+    it 'will return deuce as a score if both players have 3 points' do
+      3.times do 
+        @game.point_to(@receiver)
+        @game.point_to(@server)
+      end
+      expect(@game.score).to eq 'deuce'
+    end
+  end
 end

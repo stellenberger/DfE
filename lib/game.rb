@@ -8,7 +8,7 @@ class Game
       0 => 'love',
       1 => 'fifteen',
       2 => 'thirty',
-      3 => 'fourty'
+      3 => 'forty'
     }
   end
 
@@ -25,6 +25,14 @@ class Game
   end
 
   def score
-    "#{@points_hash[@points_array[0]]}, #{@points_hash[@points_array[1]]}"
+    if check_if_deuce
+      'deuce'
+    else
+      "#{@points_hash[@points_array[0]]}, #{@points_hash[@points_array[1]]}"
+    end
+  end
+
+  def check_if_deuce
+    @points_array[0] == 3 && @points_array[1] == 3
   end
 end
