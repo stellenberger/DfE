@@ -7,11 +7,7 @@ class Game
   end
 
   def point_to(player)
-    if player == @server 
-      point_to_server
-    else
-      point_to_receiver
-    end
+    player == @server ? point_to_server : point_to_receiver
   end
 
   def point_to_server

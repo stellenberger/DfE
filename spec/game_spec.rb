@@ -29,5 +29,18 @@ describe Game do
       @game.point_to(@receiver)
       expect(@game.score).to eq '0, 1'
     end
+
+    it 'can assign two points to the receiver, and return the score' do
+      @game.point_to(@receiver)
+      @game.point_to(@receiver)
+      expect(@game.score).to eq '0, 2'
+    end
+
+    it 'can assign multiple points to both the receiver and server, and return the score' do
+      @game.point_to(@receiver)
+      @game.point_to(@receiver)
+      @game.point_to(@server)
+      expect(@game.score).to eq '1, 2'
+    end
   end
 end
