@@ -27,6 +27,8 @@ class Game
   def score
     if check_if_deuce
       'deuce'
+    elsif @points_array[1] > 4 || @points_array[0] > 4
+      "Game, #{}" # time out
     else
       "#{@points_hash[@points_array[0]]}, #{@points_hash[@points_array[1]]}"
     end

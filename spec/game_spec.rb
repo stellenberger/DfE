@@ -53,4 +53,20 @@ describe Game do
       expect(@game.score).to eq 'deuce'
     end
   end
+
+  context '#game over' do
+    it 'will return game and the name of the player if they have at least 5 points and 2 points ahead' do
+      5.times do
+        @game.point_to(@receiver)
+      end
+      expect(@game.score).to eq 'Game, player2'
+    end
+
+    it 'will return game and the name of the player if they have at least 5 points and 2 points ahead' do
+      5.times do
+        @game.point_to(@server)
+      end
+      expect(@game.score).to eq 'Game, player1'
+    end
+  end
 end
