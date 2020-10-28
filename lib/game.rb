@@ -4,6 +4,12 @@ class Game
     @server = server
     @receiver = receiver
     @points_array = [0, 0]
+    @points_hash = {
+      0 => 'love',
+      1 => 'fifteen',
+      2 => 'thirty',
+      3 => 'fourty'
+    }
   end
 
   def point_to(player)
@@ -19,6 +25,6 @@ class Game
   end
 
   def score
-    "#{@points_array[0]}, #{@points_array[1]}"
+    "#{@points_hash[@points_array[0]]}, #{@points_hash[@points_array[1]]}"
   end
 end
